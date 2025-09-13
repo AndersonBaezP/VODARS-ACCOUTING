@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <script defer src="./js/app.js"></script>
+    <script defer src="./js/carousel.js"></script>
 </head>
 <body>
 
@@ -35,7 +36,7 @@
   </div>
 </nav>
     
-  </div></header>
+  </div>
   <section class="hero1">
   <div class="content container1">
     <h1>Nuestros servicios</h1>
@@ -138,8 +139,6 @@
   </div>
 </section>
 
-
-
   <footer>
   <div class="footer-top">
     <div class="container footer-grid">
@@ -181,96 +180,6 @@
   <span class="pulse"></span>
   <i class="fa-brands fa-whatsapp"></i>
 </a>
-
-<script>
-class Carousel {
-  constructor() {
-    this.currentSlide = 0;
-    this.slides = document.querySelectorAll('.slide');
-    this.totalSlides = this.slides.length;
-    this.dots = document.querySelectorAll('.dot');
-    
-    this.init();
-  }
-  
-  init() {
-    // Event listeners para flechas
-    document.querySelector('.left-arrow').addEventListener('click', () => {
-      this.prevSlide();
-    });
-    
-    document.querySelector('.right-arrow').addEventListener('click', () => {
-      this.nextSlide();
-    });
-    
-    // Event listeners para dots
-    this.dots.forEach((dot, index) => {
-      dot.addEventListener('click', () => {
-        this.goToSlide(index);
-      });
-    });
-    
-    // Auto-play cada 5 segundos
-    this.startAutoPlay();
-    
-    // Pausar auto-play al hover
-    const carousel = document.querySelector('.carousel-container');
-    carousel.addEventListener('mouseenter', () => {
-      this.stopAutoPlay();
-    });
-    
-    carousel.addEventListener('mouseleave', () => {
-      this.startAutoPlay();
-    });
-  }
-  
-  updateSlides() {
-    // Remover clase active de todos
-    this.slides.forEach(slide => slide.classList.remove('active'));
-    this.dots.forEach(dot => dot.classList.remove('active'));
-    
-    // Agregar clase active al actual
-    this.slides[this.currentSlide].classList.add('active');
-    this.dots[this.currentSlide].classList.add('active');
-    
-    // Mover el carrusel
-    const slidesContainer = document.querySelector('.carousel-slides');
-    slidesContainer.style.transform = `translateX(-${this.currentSlide * 100}%)`;
-  }
-  
-  nextSlide() {
-    this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
-    this.updateSlides();
-  }
-  
-  prevSlide() {
-    this.currentSlide = (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
-    this.updateSlides();
-  }
-  
-  goToSlide(index) {
-    this.currentSlide = index;
-    this.updateSlides();
-  }
-  
-  startAutoPlay() {
-    this.autoPlay = setInterval(() => {
-      this.nextSlide();
-    }, 5000); // Cambia cada 5 segundos
-  }
-  
-  stopAutoPlay() {
-    clearInterval(this.autoPlay);
-  }
-}
-
-// Inicializar cuando el DOM esté listo
-document.addEventListener('DOMContentLoaded', () => {
-  new Carousel();
-});
-</script>
-
-
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
