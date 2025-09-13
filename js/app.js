@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-
   // ===============================
   // ANIMACIÓN AL HACER SCROLL
   // ===============================
@@ -22,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // EFECTO HOVER EN CARDS DE SERVICIO
   // ===============================
   const serviceCards = document.querySelectorAll(".service-card");
-  
+
   serviceCards.forEach(card => {
     const icon = card.querySelector("i");
 
@@ -144,5 +143,3 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
-
-

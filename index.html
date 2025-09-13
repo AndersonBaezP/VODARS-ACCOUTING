@@ -1,80 +1,47 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>VODARS ACCOUNTING | Inicio</title>
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
-  <link rel="stylesheet" href="./css/styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-  <script defer src="./js/app.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VODARS ACCOUNTING</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script defer src="./js/app.js"></script>
 </head>
 <body>
 
-<header class="navbar">
-  <div class="container navbar-inner">
-    <a class="brand" href="index.html">
-      <img src="./img/log.png" alt="Logo TuFirma" />
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+  <div class="container d-flex justify-content-between align-items-center">
+    <a class="navbar-brand brand" href="index.html">
+      <img src="./img/log.png" alt="Logo" />
       <strong>VODARS ACCOUNTING</strong>
     </a>
-    <nav class="nav-links" aria-label="Principal">
-      <a href="index.html">Inicio</a>
-      <a href="servicios.html">Servicios</a>
-      <a href="nosotros.html">Nosotros</a>
-      <a href="contacto.html">Contacto</a>
-      <a class="btn-cta" href="javascript:void(0)" data-wa="cotiza">
-        <i class="fa-brands fa-whatsapp"></i> Cotiza aquí
-      </a>
-    </nav>
-    <button class="burger" aria-label="Abrir menú"><i class="fa-solid fa-bars"></i></button>
+    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+            aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
+        <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+        <li class="nav-item ms-lg-3">
+        </li>
+      </ul>
+    </div>
   </div>
-</header>
+</nav>
 
 <section class="hero">
   <div class="content container">
-    <h1>VODARS CONTABILIDAD SAS</h1>
+    <h1>VODARS ACCOUNTING S.A.S</h1>
     <h2><p>Más que números somos soluciones.</p></h2>
     <div class="actions">
-      <a class="btn" href="javascript:void(0)" data-wa="contacto"><i class="fa-brands fa-whatsapp"></i> Contáctanos</a>
-      <a class="btn secondary" href="#servicios">Ver servicios</a>
+      <a class="btn" href="servicios.html">Nuestros servicios</a>
     </div>
-  </div>
-</section>
-
-<section id="servicios" class="section container">
-  <h2>¿Cómo podemos ayudarte?</h2>
-  <p class="lead">Soluciones para empresas y emprendedores.</p>
-  <div class="grid">
-    <article class="card">
-      <div class="icon"><i class="fa-solid fa-briefcase"></i></div>
-      <h3>Asesorías</h3><p>Acompañamiento personalizado en contabilidad y finanzas para garantizar decisiones acertadas y sostenibles en tu empresa.</p>
-      <div class="card-actions"><a class="link" href="servicios.html#asesorias">Conocer más →</a></div>
-    </article>
-    <article class="card">
-      <div class="icon"><i class="fa-solid fa-chalkboard-user"></i></div>
-      <h3>Capacitaciones</h3><p>Programas de formación diseñados para fortalecer las competencias de tu equipo en materia contable, tributaria y administrativa.</p>
-      <div class="card-actions"><a class="link" href="servicios.html#capacitaciones">Conocer más →</a></div>
-    </article>
-    <article class="card">
-      <div class="icon"><i class="fa-solid fa-search-dollar"></i></div>
-      <h3>Auditoría</h3><p>Evaluación integral de tus procesos contables y financieros para identificar riesgos, optimizar recursos y asegurar transparencia.</p>
-      <div class="card-actions"><a class="link" href="servicios.html#auditoria">Conocer más →</a></div>
-    </article>
-    <article class="card">
-      <div class="icon"><i class="fa-solid fa-file-invoice-dollar"></i></div>
-      <h3>Declaraciones</h3><p>Elaboración y presentación de declaraciones tributarias con total precisión, evitando errores y garantizando el cumplimiento normativo.</p>
-      <div class="card-actions"><a class="link" href="servicios.html#declaraciones">Conocer más →</a></div>
-    </article>
-    <article class="card">
-      <div class="icon"><i class="fa-solid fa-chart-line"></i></div>
-      <h3>Optimización fiscal</h3><p>Implementación de planes fiscales estratégicos que te permitan aprovechar beneficios legales y reducir cargas innecesarias.</p>
-      <div class="card-actions"><a class="link" href="servicios.html#optimizacion">Conocer más →</a></div>
-    </article>
-    <article class="card">
-      <div class="icon"><i class="fa-solid fa-handshake-angle"></i></div>
-      <h3>Negocios</h3><p>Asesoramiento integral en gestión empresarial y finanzas para impulsar el crecimiento sostenible de tu negocio.</p>
-      <div class="card-actions"><a class="link" href="servicios.html#negocios">Conocer más →</a></div>
-    </article>
   </div>
 </section>
 
@@ -129,10 +96,11 @@
   <div class="footer-bottom"><div class="container">© 2025 VODARS ACCOUNTING. Todos los derechos reservados.</div></div>
 </footer>
 
-<a class="floating-wa" href="#" data-wa="contacto" aria-label="WhatsApp">
+<a class="floating-wa" href=https://wa.me/593987654321 data-wa="contacto" aria-label="WhatsApp">
   <span class="pulse"></span>
   <i class="fa-brands fa-whatsapp"></i>
 </a>
-
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
 </body>
 </html>
