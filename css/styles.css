@@ -54,7 +54,6 @@ body {  margin: 0;  padding: 0;  font-family: Inter, system-ui, -apple-system, S
 .hero1 .tagline {  max-width: 800px;margin: 0 auto 30px;opacity: .85;font-size: 15px;font-weight: 200;}
 
 
-
 /* HERO2 Nosotros */
 .hero2{position:relative;min-height:55vh;display:grid;place-items:center;text-align:center;color:#fff;background: #547ea5;font-size: 15px;}
 .hero2::before{content:"";position:absolute;inset:0;background:url("../img/nosotros.jpg") center/cover no-repeat;opacity:.39}
@@ -74,7 +73,7 @@ body {  margin: 0;  padding: 0;  font-family: Inter, system-ui, -apple-system, S
 .hero3 .tagline {  max-width: 800px;margin: 0 auto 30px;opacity: .85;font-size: 15px;font-weight: 200;}
 
 /* SECTION TITLES */
-.section{padding:40px 0}
+.section{padding:25px 0}
 .section h2{font-size:clamp(24px,3.5vw,36px);margin:0 0 14px;color:#547ea5;text-align:center}
 .section p.lead{color:var(--c-muted);max-width:800px;margin:0 auto 32px;text-align:center;font-size:18px;line-height:1.6}
 
@@ -93,9 +92,10 @@ body {  margin: 0;  padding: 0;  font-family: Inter, system-ui, -apple-system, S
 .split .photo{border-radius:20px;overflow:hidden;box-shadow:var(--shadow)}
 
 /* TEAM */
-.team{grid-template-columns:repeat(3,1fr)}
+.team{grid-template-columns:repeat(auto-fit, minmax(90px, 1fr));gap: 1.rem;justify-content: center;}
 .team .member{display:flex;flex-direction:column;align-items:center;text-align:center}
-.member img{width:160px;height:160px;object-fit:cover;border-radius:50%;box-shadow:var(--shadow)}
+.member img:hover {transform: scale(1.40);cursor: pointer; }
+.member img{width:80px;height:80px;object-fit:cover;border-radius:50%;box-shadow:var(--shadow);transition:transform .3s ease}
 .member h4{margin:12px 0 4px}
 .member span{color:var(--c-muted)}
 
@@ -142,6 +142,7 @@ footer{background:rgba(72, 87, 110, 0.92);backdrop-filter:saturate(140%) blur(6p
 @keyframes slideUp {  from { opacity: 0; transform: translateY(40px); }  to { opacity: 1; transform: translateY(0); }}
 @keyframes zoomIn {  from { opacity: 0; transform: scale(0.8); }  to { opacity: 1; transform: scale(1); }}
 
+/* CAROUSEL */
 body:not(.loaded) {
   overflow: hidden;
 }

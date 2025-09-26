@@ -9,10 +9,11 @@
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <script defer src="./js/app.js"></script>
+    <script defer src="./js/carousel.js"></script>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
   <div class="container d-flex justify-content-between align-items-center">
     <a class="navbar-brand brand" href="index.html">
       <img src="./img/log.png" alt="Logo" />
@@ -34,44 +35,112 @@
     </div>
   </div>
 </nav>
+    
+  </div>
+  <section class="hero1">
+  <div class="content container1">
+    <h1>Nuestros servicios</h1>
+    <h2><p>Asesoría integral, cumplimiento tributario y decisiones financieras con datos claros.</p></h2>
+  </div>
+</section>
 
-<section class="hero">
-  <div class="content container">
-    <h1>VODARS ACCOUNTING S.A.S</h1>
-    <h2><p>Más que números somos soluciones.</p></h2>
-    <div class="actions">
-      <a class="btn" href="servicios.html">Nuestros servicios</a>
+  <section class="carousel-section">
+  <div class="container">
+    <h2>Nuestros Servicios Destacados</h2>
+    <div class="carousel-container">
+      <button class="carousel-arrow left-arrow">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      <div class="carousel-wrapper">
+        <div class="carousel-slides">
+          <div class="slide active">
+            <div class="card-carousel">
+              <div class="card-image">
+                <img src="./img/ase1.jpg" alt="Asesoría Contable">
+              </div>
+              <div class="card-content">
+                <h3>Asesoría Contable Integral</h3>
+                <p>Brindamos acompañamiento personalizado en contabilidad y finanzas para garantizar decisiones acertadas y crecimiento sostenible de tu empresa.</p>
+                <ul class="benefits">
+                  <li>Análisis financiero detallado</li>
+                  <li>Reportes mensuales</li>
+                  <li>Consultoría estratégica</li>
+                </ul>
+                <a href="https://wa.me/593999287394?text=Hola,%20necesito%20información"  
+                   target="_blank" class="whatsapp-btn">
+                  <i class="fa-brands fa-whatsapp"></i>
+                  Consultar por WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tarjeta 2 -->
+          <div class="slide">
+            <div class="card-carousel">
+              <div class="card-image">
+                <img src="./img/ase2.webp" alt="Auditoría">
+              </div>
+              <div class="card-content">
+                <h3>Auditoría Empresarial</h3>
+                <p>Evaluación integral de procesos contables y financieros para optimizar recursos y asegurar transparencia en tu organización.</p>
+                <ul class="benefits">
+                  <li>Revisión de procesos</li>
+                  <li>Identificación de riesgos</li>
+                  <li>Plan de mejoras</li>
+                </ul>
+                <a href="https://wa.me/593999287394?text=Hola,%20necesito%20información" 
+                   target="_blank" class="whatsapp-btn">
+                  <i class="fa-brands fa-whatsapp"></i>
+                  Consultar por WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tarjeta 3 -->
+          <div class="slide">
+            <div class="card-carousel">
+              <div class="card-image">
+                <img src="./img/ase3.jpg" alt="Capacitación">
+              </div>
+              <div class="card-content">
+                <h3>Capacitación Empresarial</h3>
+                <p>Programas de formación especializados para fortalecer las competencias de tu equipo en materia contable y tributaria.</p>
+                <ul class="benefits">
+                  <li>Talleres personalizados</li>
+                  <li>Material actualizado</li>
+                  <li>Certificación incluida</li>
+                </ul>
+                <a href="https://wa.me/593999287394?text=Hola,%20necesito%20información" 
+                   target="_blank" class="whatsapp-btn">
+                  <i class="fa-brands fa-whatsapp"></i>
+                  Consultar por WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      
+      <!-- Flecha derecha -->
+      <button class="carousel-arrow right-arrow">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+    </div>
+    
+    <!-- Indicadores -->
+    <div class="carousel-dots">
+      <span class="dot active" data-slide="0"></span>
+      <span class="dot" data-slide="1"></span>
+      <span class="dot" data-slide="2"></span>
     </div>
   </div>
 </section>
 
-<section class="section container split">
-  <div class="photo"><img src="img/hero.webp" alt="Reunión de empresarios" /></div>
-  <div>
-    <h2>¿Por qué elegirnos?</h2>
-    <p class="lead">En un entorno empresarial cada vez más exigente, sabemos que lo más importante para ti es contar con un aliado confiable que te brinde tranquilidad y resultados. Nuestro equipo combina experiencia, tecnología y compromiso para acompañar a tu empresa en cada etapa de su crecimiento.</p>
-  </div>
-</section>
 
-<section class="section container">
-  <h2>Empresas que confían en nosotros</h2>
-  <br />
-  <div class="grid team">
-    <div class="member"><img src="img/logo6.jpg" alt="Carlos Pérez" /></div>
-    <div class="member"><img src="img/LOGOVODARS1.png" alt="María López" /></div>
-    <div class="member"><img src="img/logo3.webp" alt="Carlos Pérez" /></div>
-    <div class="member"><img src="img/logo5.webp" alt="María López" /></div>
-    <div class="member"><img src="img/logo4.jpg" alt="Anderson Báez" /></div>
-    <div class="member"><img src="img/logo2.webp" alt="Anderson Báez" /></div>
-    <div class="member"><img src="img/logo7.jpg" alt="Anderson Báez" /></div>
-    <div class="member"><img src="img/logo9.png" alt="Carlos Pérez" /></div>
-    <div class="member"><img src="img/logo10.jpg" alt="Anderson Báez" /></div>
-    <div class="member"><img src="img/logo8.jpg" alt="María López" /></div>
-  </div>
-</section>
-
-
-<footer>
+  <footer>
   <div class="footer-top">
     <div class="container footer-grid">
       <div>
@@ -112,6 +181,7 @@
   <span class="pulse"></span>
   <i class="fa-brands fa-whatsapp"></i>
 </a>
+
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
 </body>
