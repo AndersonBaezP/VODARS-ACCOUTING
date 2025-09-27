@@ -1,0 +1,1201 @@
+/* ===== CSS ESPECÍFICO PARA PÁGINA NOSOTROS - VODARS ACCOUNTING ===== */
+/* ===== DEFINIR VARIABLES CSS AL INICIO DEL ARCHIVO ===== */
+/* ===== DEFINIR VARIABLES CSS AL INICIO DEL ARCHIVO ===== */
+:root {
+    --c-accent: #25d366; /* Color verde WhatsApp */
+    --whatsapp-shadow: rgba(37, 211, 102, 0.45);
+    --whatsapp-pulse: rgba(37, 211, 102, 0.6);
+}
+
+/* ===== FLOATING WHATSAPP - VERSIÓN ÚNICA Y DEFINITIVA ===== */
+.floating-wa {
+    position: fixed !important;
+    right: 18px;
+    bottom: 18px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--c-accent);
+    display: grid;
+    place-items: center;
+    color: #fff !important;
+    font-size: 48px;
+    box-shadow: 0 10px 24px var(--whatsapp-shadow);
+    z-index: 9999;
+    text-decoration: none !important;
+    transition: all 0.3s ease;
+    
+    /* ANIMACIÓN DE LATIDO PRINCIPAL */
+    animation: whatsapp-heartbeat 2s infinite ease-in-out;
+}
+
+.floating-wa:hover {
+    filter: brightness(1.05);
+    text-decoration: none !important;
+    transform: scale(1.1);
+    box-shadow: 0 15px 35px var(--whatsapp-shadow);
+}
+
+.floating-wa:focus,
+.floating-wa:active {
+    color: #fff !important;
+    text-decoration: none !important;
+}
+
+/* ===== ELEMENTO PULSE - EFECTO DE EXPANSIÓN ===== */
+.floating-wa .pulse {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: transparent;
+    box-shadow: 0 0 0 0 var(--whatsapp-pulse);
+    pointer-events: none;
+    
+    /* ANIMACIÓN DE PULSO EXPANDIÉNDOSE */
+    animation: shadow-pulse-expand 2s infinite;
+}
+
+/* ===== ANIMACIONES KEYFRAMES ===== */
+
+/* 1. LATIDO DEL BOTÓN (crece y se encoge) */
+@keyframes whatsapp-heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.05);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    75% {
+        transform: scale(1.05);
+    }
+}
+
+/* 2. PULSO QUE SE EXPANDE (sombra que crece) */
+@keyframes shadow-pulse-expand {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 var(--whatsapp-pulse);
+        opacity: 0.7;
+    }
+    50% {
+        opacity: 0.4;
+    }
+    100% {
+        transform: scale(1.4);
+        box-shadow: 0 0 0 20px rgba(37, 211, 102, 0);
+        opacity: 0;
+    }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .floating-wa {
+        width: 70px;
+        height: 70px;
+        font-size: 40px;
+        right: 15px;
+        bottom: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .floating-wa {
+        width: 60px;
+        height: 60px;
+        font-size: 35px;
+        right: 12px;
+        bottom: 12px;
+    }
+}
+
+/* ===== CONTENEDOR DE MISIÓN Y VISIÓN ELEGANTE ===== */
+.mission-vision-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.mission-vision-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(84, 126, 165, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(84, 126, 165, 0.05) 0%, transparent 50%);
+    z-index: 1;
+}
+
+.mission-vision-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Tarjeta de Misión */
+.mission-card {
+    background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+    padding: 3.5rem 3rem;
+    border-radius: 25px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(84, 126, 165, 0.15);
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    opacity: 0;
+    transform: translateX(-80px);
+    animation: slideInLeft 1.2s ease-out 0.3s forwards;
+}
+
+.mission-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(135deg, #547ea5 0%, #6a92c7 100%);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.mission-card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -30%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(84, 126, 165, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    transition: all 0.5s ease;
+    z-index: -1;
+    opacity: 0;
+}
+
+.mission-card:hover {
+    transform: translateY(-15px) scale(1.03);
+    box-shadow: 0 30px 80px rgba(0,0,0,0.18);
+}
+
+.mission-card:hover::before {
+    transform: scaleX(1);
+}
+
+.mission-card:hover::after {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+/* Tarjeta de Visión */
+.vision-card {
+    background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+    padding: 3.5rem 3rem;
+    border-radius: 25px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(84, 126, 165, 0.15);
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    opacity: 0;
+    transform: translateX(80px);
+    animation: slideInRight 1.2s ease-out 0.5s forwards;
+}
+
+.vision-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(135deg, #4a90e2 0%, #67b3f3 100%);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.vision-card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -30%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(74, 144, 226, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    transition: all 0.5s ease;
+    z-index: -1;
+    opacity: 0;
+}
+
+.vision-card:hover {
+    transform: translateY(-15px) scale(1.03);
+    box-shadow: 0 30px 80px rgba(0,0,0,0.18);
+}
+
+.vision-card:hover::before {
+    transform: scaleX(1);
+}
+
+.vision-card:hover::after {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+/* Títulos de Misión y Visión */
+.mission-card h2,
+.vision-card h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #355c8d;
+    line-height: 1.2;
+}
+
+.mission-card h2::before {
+    content: '🎯';
+    font-size: 2.2rem;
+    animation: bounce 2s infinite;
+}
+
+.vision-card h2::before {
+    content: '👁️';
+    font-size: 2.2rem;
+    animation: bounce 2s infinite 0.5s;
+}
+
+/* Párrafos de Misión y Visión */
+.mission-card p,
+.vision-card p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #4a5568;
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    text-align: justify;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out 0.8s forwards;
+}
+
+/* ===== SECCIÓN DE OBJETIVOS INTERACTIVOS ===== */
+.objectives-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #ffffff 0%, #f7fafc 100%);
+    position: relative;
+}
+
+.objectives-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(84,126,165,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+    z-index: 1;
+}
+
+.objectives-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.objectives-section h2 {
+    font-size: 3.2rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 4rem;
+    color: #547ea5;
+    position: relative;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s ease-out 0.2s forwards;
+}
+
+.objectives-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(135deg, #547ea5 0%, #6a92c7 100%);
+    border-radius: 3px;
+    box-shadow: 0 2px 10px rgba(84, 126, 165, 0.3);
+}
+
+/* Grid de Objetivos */
+.objectives-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Tarjetas de Objetivos */
+/* ===== OBJETIVOS MINIMALISTAS - SOLO ICONOS Y TÍTULOS ===== */
+.objectives-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #ffffff 0%, #f7fafc 100%);
+    position: relative;
+}
+
+.objectives-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="30" height="30" patternUnits="userSpaceOnUse"><circle cx="15" cy="15" r="1" fill="rgba(84,126,165,0.08)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+    z-index: 1;
+}
+
+.objectives-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.objectives-section h2 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 5rem;
+    color: #547ea5;
+    position: relative;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s ease-out 0.2s forwards;
+}
+
+.objectives-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(135deg, #547ea5 0%, #6a92c7 100%);
+    border-radius: 3px;
+    box-shadow: 0 2px 10px rgba(84, 126, 165, 0.3);
+}
+
+/* Grid para iconos minimalistas */
+.objectives-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 4rem 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Contenedor de cada objetivo */
+.objective-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    opacity: 0;
+    transform: translateY(60px) scale(0.9);
+    animation: scaleInUp 1s ease-out forwards;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Colores dinámicos */
+.objective-card:nth-child(1) {
+    --card-color: #667eea;
+    --card-color-rgb: 102, 126, 234;
+    --card-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    animation-delay: 0.3s;
+}
+
+.objective-card:nth-child(2) {
+    --card-color: #4facfe;
+    --card-color-rgb: 79, 172, 254;
+    --card-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    animation-delay: 0.5s;
+}
+
+.objective-card:nth-child(3) {
+    --card-color: #fa709a;
+    --card-color-rgb: 250, 112, 154;
+    --card-gradient: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    animation-delay: 0.7s;
+}
+
+.objective-card:nth-child(4) {
+    --card-color: #f093fb;
+    --card-color-rgb: 240, 147, 251;
+    --card-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    animation-delay: 0.9s;
+}
+
+.objective-card:nth-child(5) {
+    --card-color: #11998e;
+    --card-color-rgb: 17, 153, 142;
+    --card-gradient: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    animation-delay: 1.1s;
+}
+
+.objective-card:nth-child(6) {
+    --card-color: #ff6b6b;
+    --card-color-rgb: 255, 107, 107;
+    --card-gradient: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%);
+    animation-delay: 1.3s;
+}
+
+/* Color por defecto para más de 6 elementos */
+.objective-card:not(:nth-child(-n+6)) {
+    --card-color: #6c757d;
+    --card-color-rgb: 108, 117, 125;
+    --card-gradient: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+}
+
+/* Efecto de fondo sutil al hover */
+.objective-card::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    left: -40px;
+    right: -40px;
+    bottom: -40px;
+    background: radial-gradient(circle, rgba(var(--card-color-rgb), 0.05) 0%, transparent 70%);
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    z-index: -1;
+}
+
+.objective-card:hover::before {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+/* Hover efecto para toda la tarjeta */
+.objective-card:hover {
+    transform: translateY(-15px) scale(1.05);
+}
+
+/* Icono principal */
+.objective-icon {
+    width: 120px;
+    height: 120px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    background: var(--card-gradient);
+    box-shadow: 
+        0 20px 40px rgba(var(--card-color-rgb), 0.3),
+        0 0 0 0 rgba(var(--card-color-rgb), 0.4);
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto brillante en el icono */
+.objective-icon::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+    transform: translateX(-100%) translateY(-100%) rotate(30deg);
+    transition: transform 0.6s ease;
+}
+
+.objective-card:hover .objective-icon::before {
+    transform: translateX(100%) translateY(100%) rotate(30deg);
+}
+
+/* Animaciones de hover del icono */
+.objective-card:hover .objective-icon {
+    transform: rotateY(15deg) scale(1.1);
+    box-shadow: 
+        0 30px 60px rgba(var(--card-color-rgb), 0.4),
+        0 0 0 10px rgba(var(--card-color-rgb), 0.1);
+    animation: iconBounce 0.6s ease;
+}
+
+/* Título minimalista */
+.objective-card h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--card-color);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    letter-spacing: -0.02em;
+}
+
+.objective-card:hover h3 {
+    transform: scale(1.05);
+    color: #2d3748;
+}
+
+/* Línea decorativa debajo del título */
+.objective-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 60px;
+    height: 3px;
+    background: var(--card-gradient);
+    border-radius: 2px;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.objective-card:hover h3::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+/* Ocultar párrafos */
+.objective-card p {
+    display: none;
+}
+
+/* ===== ANIMACIONES ===== */
+@keyframes scaleInUp {
+    from {
+        opacity: 0;
+        transform: translateY(80px) scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes iconBounce {
+    0%, 100% { 
+        transform: rotateY(15deg) scale(1.1); 
+    }
+    50% { 
+        transform: rotateY(15deg) scale(1.15); 
+    }
+}
+
+/* ===== EFECTOS DE CARGA SECUENCIAL ===== */
+.objectives-section {
+    opacity: 0;
+    animation: sectionFadeIn 1.5s ease-out 0.1s forwards;
+}
+
+@keyframes sectionFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (min-width: 1200px) {
+    .objectives-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 5rem 4rem;
+    }
+    
+    .objective-icon {
+        width: 140px;
+        height: 140px;
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .objectives-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4rem 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .objectives-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem 2rem;
+    }
+    
+    .objective-icon {
+        width: 100px;
+        height: 100px;
+        font-size: 3rem;
+    }
+    
+    .objective-card h3 {
+        font-size: 1.5rem;
+    }
+    
+    .objectives-section h2 {
+        font-size: 2.8rem;
+        margin-bottom: 4rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .objectives-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        padding: 0 1rem;
+    }
+    
+    .objective-icon {
+        width: 90px;
+        height: 90px;
+        font-size: 2.5rem;
+    }
+    
+    .objective-card h3 {
+        font-size: 1.4rem;
+    }
+    
+    .objectives-section {
+        padding: 80px 0;
+    }
+}
+
+/* ===== EFECTOS ESPECIALES ===== */
+/* Partículas flotantes */
+.objectives-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(102, 126, 234, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(79, 172, 254, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(250, 112, 154, 0.03) 0%, transparent 50%);
+    z-index: 1;
+    animation: float 20s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { 
+        transform: translateY(0px) rotate(0deg); 
+    }
+    50% { 
+        transform: translateY(-20px) rotate(1deg); 
+    }
+}
+
+/* Efecto de interacción entre iconos */
+.objective-card:hover ~ .objective-card .objective-icon {
+    transform: scale(0.95);
+    opacity: 0.8;
+    transition: all 0.4s ease;
+}
+
+/* Resetear cuando se quita el hover */
+.objectives-grid:not(:hover) .objective-icon {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* ===== TARJETA DE PRESENTACIÓN DEL GERENTE ===== */
+.manager-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #355c8d, #19213c) ;
+    position: relative;
+    overflow: hidden;
+}
+
+.manager-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(255,255,255,0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 50%);
+    z-index: 1;
+}
+
+.manager-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.manager-section h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 4rem;
+    color: white;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+    position: relative;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s ease-out 0.2s forwards;
+}
+
+.manager-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: rgba(255,255,255,0.4);
+    border-radius: 3px;
+}
+
+/* Tarjeta horizontal del gerente */
+.manager-card {
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 25px;
+    padding: 3.5rem;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 3rem;
+    align-items: center;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.2);
+    border: 1px solid rgba(255,255,255,0.3);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    opacity: 0;
+    transform: translateY(80px) scale(0.95);
+    animation: scaleInUp 1.2s ease-out 0.5s forwards;
+}
+
+.manager-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 40px 100px rgba(0,0,0,0.25);
+}
+
+/* Avatar del gerente */
+.manager-avatar {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #edf3fc 0%, #355c8d 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    color: white;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(84, 126, 165, 0.4);
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    cursor: pointer;
+}
+
+.manager-avatar::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.4), transparent);
+    animation: shine 4s infinite;
+    transform: translateX(-100%) translateY(-100%) rotate(30deg);
+}
+
+.manager-card:hover .manager-avatar {
+    transform: scale(1.08) rotate(5deg);
+    box-shadow: 0 20px 50px rgba(84, 126, 165, 0.5);
+    animation: pulse 2s infinite;
+}
+
+/* Información del gerente */
+.manager-info h3 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    color: #355c8d;
+    opacity: 0;
+    transform: translateX(30px);
+    animation: slideInRight 1s ease-out 0.8s forwards;
+}
+
+.manager-position {
+    font-size: 1.3rem;
+    color: #19213c;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0;
+    transform: translateX(30px);
+    animation: slideInRight 1s ease-out 1s forwards;
+}
+
+.manager-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #4a5568;
+    margin-bottom: 2rem;
+    text-align: justify;
+    opacity: 0;
+    transform: translateX(30px);
+    animation: slideInRight 1s ease-out 1.2s forwards;
+}
+
+/* Estadísticas del gerente */
+.manager-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease-out 1.4s forwards;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    background: rgba(84, 126, 165, 0.08);
+    border-radius: 18px;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(84, 126, 165, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.stat-item:hover::before {
+    left: 100%;
+}
+
+.stat-item:hover {
+    background: rgba(84, 126, 165, 0.15);
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(84, 126, 165, 0.2);
+}
+
+.stat-number {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #355c8d;
+    display: block;
+    margin-bottom: 0.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #718096;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    position: relative;
+    z-index: 2;
+}
+
+/* ===== ANIMACIONES ESPECÍFICAS ===== */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleInUp {
+    from {
+        opacity: 0;
+        transform: translateY(80px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(180deg);
+    }
+}
+
+@keyframes wiggle {
+    0%, 100% { transform: rotate(15deg) scale(1.2); }
+    25% { transform: rotate(18deg) scale(1.25); }
+    75% { transform: rotate(12deg) scale(1.15); }
+}
+
+@keyframes shine {
+    0% {
+        transform: translateX(-100%) translateY(-100%) rotate(30deg);
+    }
+    100% {
+        transform: translateX(100%) translateY(100%) rotate(30deg);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1.08) rotate(5deg);
+    }
+    50% {
+        transform: scale(1.12) rotate(5deg);
+    }
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1200px) {
+    .mission-vision-container {
+        gap: 3rem;
+    }
+    
+    .objectives-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .mission-vision-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .manager-card {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        text-align: center;
+        padding: 3rem;
+    }
+    
+    .manager-stats {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .objectives-section {
+        padding: 80px 0;
+    }
+    
+    .manager-section {
+        padding: 80px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .mission-card,
+    .vision-card,
+    .objective-card {
+        padding: 2.5rem 2rem;
+    }
+    
+    .mission-card h2,
+    .vision-card h2 {
+        font-size: 2rem;
+    }
+    
+    .objectives-section h2 {
+        font-size: 2.5rem;
+    }
+    
+    .manager-card {
+        padding: 2.5rem;
+        margin: 0 1rem;
+    }
+    
+    .manager-avatar {
+        width: 150px;
+        height: 150px;
+        font-size: 3.5rem;
+    }
+    
+    .manager-info h3 {
+        font-size: 2rem;
+    }
+    
+    .mission-vision-section,
+    .objectives-section,
+    .manager-section {
+        padding: 60px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .mission-vision-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .manager-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .manager-avatar {
+        margin-bottom: 2rem;
+    }
+    
+    .manager-stats {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .mission-card h2,
+    .vision-card h2 {
+        font-size: 1.6rem;
+    }
+    
+    .objectives-section h2 {
+        font-size: 2rem;
+    }
+    
+    .manager-section h2 {
+        font-size: 2.2rem;
+    }
+    
+    .mission-vision-container {
+        padding: 0 1rem;
+    }
+}
+
+/* ===== EFECTOS ADICIONALES ===== */
+.manager-card .manager-info > * {
+    transition: all 0.3s ease;
+}
+
+.manager-card:hover .manager-info > * {
+    transform: translateX(5px);
+}
+
+.stat-item .stat-number {
+    transition: all 0.3s ease;
+}
+
+.stat-item:hover .stat-number {
+    transform: scale(1.1);
+}
+
+/* Efectos de carga mejorados */
+.mission-vision-section,
+.objectives-section,
+.manager-section {
+    opacity: 0;
+    animation: sectionFadeIn 1.5s ease-out forwards;
+}
+
+.mission-vision-section {
+    animation-delay: 0.1s;
+}
+
+.objectives-section {
+    animation-delay: 0.3s;
+}
+
+.manager-section {
+    animation-delay: 0.5s;
+}
+
+@keyframes sectionFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+    
+
+}
+/* ===== FIN DEL CSS ===== */
