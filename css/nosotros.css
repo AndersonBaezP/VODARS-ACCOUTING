@@ -169,7 +169,7 @@
     left: 0;
     width: 100%;
     height: 6px;
-    background: linear-gradient(135deg, #547ea5 0%, #6a92c7 100%);
+    background: linear-gradient(135deg, #355C8D 0%, #19213C 100%);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -225,7 +225,7 @@
     left: 0;
     width: 100%;
     height: 6px;
-    background: linear-gradient(135deg, #4a90e2 0%, #67b3f3 100%);
+    background: linear-gradient(135deg, #355C8D 0%, #19213C 100%);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -270,7 +270,7 @@
     display: flex;
     align-items: center;
     gap: 1rem;
-    color: #355c8d;
+    color: #355C8D;
     line-height: 1.2;
 }
 
@@ -329,7 +329,7 @@
     font-weight: 800;
     text-align: center;
     margin-bottom: 4rem;
-    color: #547ea5;
+    color: #355C8D;
     position: relative;
     opacity: 0;
     transform: translateY(50px);
@@ -388,7 +388,7 @@
     font-weight: 800;
     text-align: center;
     margin-bottom: 5rem;
-    color: #547ea5;
+    color: #355C8D;
     position: relative;
     opacity: 0;
     transform: translateY(50px);
@@ -433,52 +433,37 @@
 
 /* Colores dinámicos */
 .objective-card:nth-child(1) {
-    --card-color: #667eea;
-    --card-color-rgb: 102, 126, 234;
-    --card-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --card-color: #355C8D;
+    --card-color-rgb: 53, 92, 141;
+    --card-gradient: linear-gradient(135deg,  #355C8D 0%, #19213C 100%);
     animation-delay: 0.3s;
 }
-
 .objective-card:nth-child(2) {
-    --card-color: #4facfe;
+    --card-color: #355C8D;
     --card-color-rgb: 79, 172, 254;
-    --card-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    --card-gradient: linear-gradient(135deg, #355C8D 0%, #19213C 100%);
     animation-delay: 0.5s;
 }
 
 .objective-card:nth-child(3) {
-    --card-color: #fa709a;
+    --card-color: #355C8D;
     --card-color-rgb: 250, 112, 154;
-    --card-gradient: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    --card-gradient: linear-gradient(135deg, #355C8D 0%, #19213C 100%);
     animation-delay: 0.7s;
 }
 
 .objective-card:nth-child(4) {
-    --card-color: #f093fb;
+    --card-color: #355C8D;
     --card-color-rgb: 240, 147, 251;
-    --card-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --card-gradient: linear-gradient(135deg, #355C8D 0%, #19213C 100%);
     animation-delay: 0.9s;
-}
-
-.objective-card:nth-child(5) {
-    --card-color: #11998e;
-    --card-color-rgb: 17, 153, 142;
-    --card-gradient: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
-    animation-delay: 1.1s;
-}
-
-.objective-card:nth-child(6) {
-    --card-color: #ff6b6b;
-    --card-color-rgb: 255, 107, 107;
-    --card-gradient: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%);
-    animation-delay: 1.3s;
 }
 
 /* Color por defecto para más de 6 elementos */
 .objective-card:not(:nth-child(-n+6)) {
-    --card-color: #6c757d;
+    --card-color: #EDF3FC;
     --card-color-rgb: 108, 117, 125;
-    --card-gradient: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+    --card-gradient: linear-gradient(135deg, #EDF3FC 0%, #EDF3FC 100%);
 }
 
 /* Efecto de fondo sutil al hover */
@@ -516,10 +501,10 @@
     justify-content: center;
     font-size: 3.5rem;
     margin-bottom: 2rem;
-    background: var(--card-gradient);
+    background: #355C8D;
     box-shadow: 
-        0 20px 40px rgba(var(--card-color-rgb), 0.3),
-        0 0 0 0 rgba(var(--card-color-rgb), 0.4);
+        0 20px 40px rgba #355C8D,
+        0 0 0 0 rgba#355C8D;
     transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
     cursor: pointer;
     position: relative;
@@ -711,7 +696,7 @@
     background: 
         radial-gradient(circle at 20% 30%, rgba(102, 126, 234, 0.03) 0%, transparent 50%),
         radial-gradient(circle at 80% 70%, rgba(79, 172, 254, 0.03) 0%, transparent 50%),
-        radial-gradient(circle at 40% 80%, rgba(250, 112, 154, 0.03) 0%, transparent 50%);
+        radial-gradient(circle at 40% 80%, rgba(121, 112, 250, 0.03) 0%, transparent 50%);
     z-index: 1;
     animation: float 20s ease-in-out infinite;
 }
@@ -791,25 +776,26 @@
 
 /* Tarjeta horizontal del gerente */
 .manager-card {
-    background: rgba(255,255,255,0.95);
-    backdrop-filter: blur(20px);
-    border-radius: 25px;
-    padding: 3.5rem;
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: 3rem;
-    align-items: center;
-    box-shadow: 0 30px 80px rgba(0,0,0,0.2);
-    border: 1px solid rgba(255,255,255,0.3);
-    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-    opacity: 0;
-    transform: translateY(80px) scale(0.95);
-    animation: scaleInUp 1.2s ease-out 0.5s forwards;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 25px;
+  padding: 3.5rem;
+  display: grid;
+  grid-template-columns: auto 1fr; /* 'auto' ajusta al avatar; colapsa si vacío */
+  gap: 2rem; /* Reduce gap si imagen falla */
+  align-items: start; /* Cambia a 'start' para alinear arriba si hay desbalance */
+  box-shadow: 0 30px 80px rgba(0,0,0,0.2);
+  border: 1px solid rgba(255,255,255,0.3);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  opacity: 0;
+  transform: translateY(80px) scale(0.95);
+  animation: scaleInUp 1.2s ease-out 0.5s forwards;
+  min-height: 0; /* Evita que el grid expanda verticalmente por imagen rota */
 }
 
 .manager-card:hover {
-    transform: translateY(-15px) scale(1.02);
-    box-shadow: 0 40px 100px rgba(0,0,0,0.25);
+  transform: translateY(-15px) scale(1.02);
+  box-shadow: 0 40px 100px rgba(0,0,0,0.25);
 }
 
 /* Avatar del gerente */

@@ -97,38 +97,25 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // ===============================
-  // EFECTO DE ESCRITURA (TYPEWRITER)
-  // ===============================
-  const typeWriter = (el, text, speed = 90) => {
-    if (el.dataset.typed) return; // evitar escribir dos veces
-    el.dataset.typed = true;
-    let i = 0;
-    el.innerHTML = "";
-    el.style.borderRight = "2px solid #f5f0e7ff";
+// EFECTO PROFESIONAL DE ENTRADA (FADE + SLIDE)
+// ===============================
+document.querySelectorAll("h2").forEach((title, i) => {
+  title.style.opacity = "0";
+  title.style.transform = "translateY(30px)";
+  title.style.transition = "all 0.8s ease-out";
 
-    const type = () => {
-      if (i < text.length) {
-        el.innerHTML += text.charAt(i);
-        i++;
-        setTimeout(type, speed);
-      } else {
-        setTimeout(() => el.style.borderRight = "none", 1000);
-      }
-    };
-    type();
-  };
-
-  document.querySelectorAll("h2").forEach((title, i) => {
-    const originalText = title.textContent;
-    const titleObserver = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting) {
-        setTimeout(() => typeWriter(title, originalText), i * 500);
-        titleObserver.disconnect();
-      }
-    });
-    titleObserver.observe(title);
+  const titleObserver = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+      setTimeout(() => {
+        title.style.opacity = "1";
+        title.style.transform = "translateY(0)";
+      }, i * 200); // retardo pequeño entre títulos
+      titleObserver.disconnect();
+    }
   });
 
+  titleObserver.observe(title);
+});
   // ===============================
   // EFECTO LOADING PAGE
   // ===============================
