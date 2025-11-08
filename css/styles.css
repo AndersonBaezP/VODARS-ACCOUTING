@@ -35,7 +35,7 @@ body {  margin: 0;  padding: 0;  font-family: Inter, system-ui, -apple-system, S
 
 
 /* ----------------------------HERO------------------------------------ */
-.hero{position:relative;min-height:70vh;display:grid;place-items:center;text-align:center;;}
+.hero{position:relative;min-height:70vh;display:grid;place-items:center;text-align:center;color:#fff;background: #355C8D;font-size: 15px;overflow: hidden;}
 .hero::before{content:"";position:absolute;inset:0;background:url("../img/Recurso 1_7.png") center/cover no-repeat;}
 .hero .content{ position:relative;z-index:1;padding:80px 0}
 .hero h1{font-size:clamp(25px,6vw,40px);margin:0 0 20px}
@@ -50,7 +50,7 @@ body {  margin: 0;  padding: 0;  font-family: Inter, system-ui, -apple-system, S
 
 
 /* -----------------HERO1 Servicios------------------------*/
-.hero1{position:relative;min-height:70vh;display:grid;place-items:center;text-align:center;color:#fff;background: #547ea5;font-size: 15px;overflow: hidden;}
+.hero1{position:relative;min-height:65vh;display:grid;place-items:center;text-align:center;color:#fff;background: #355C8D;font-size: 15px;overflow: hidden;}
 .hero1::before{content:"";position:absolute;inset:0;background:url("../img/Recurso 1_1.png") center/cover no-repeat;z-index: 0;}
 .hero1 .content{position:relative;z-index:1;padding:80px 30}
 .hero1 h1,.hero1 h2{font-size:clamp(36px,7vw,56px);margin:0 0 15px;font-weight: 800;}
@@ -152,16 +152,17 @@ transition: all 0.3s ease;  display: inline-flex;  align-items: center;  gap: 6p
   .feature-content h4 {    font-size: 16px;  }}
 
 /* ---------------------------------HERO2 Nosotros--------------------------------- */
-.hero2{position:relative;min-height:70vh;display:grid;place-items:center;text-align:center;}
-.hero2::before{content:"";position:absolute;inset:0;background:url("../img/nosotroslimpio.png") center/cover no-repeat;}
-.hero2.content{position:relative;z-index:1;padding:80px 0}
-.hero2 h1{font-size:clamp(36px,7vw,56px);margin:0 0 15px;font-weight: 800;}
-.hero2 p{max-width:780px;margin:0 auto px;opacity:.95}
-.hero2 .actions{display:flex;gap:14px;justify-content:center}
-.hero2 .tagline {  max-width: 800px;margin: 0 auto 30px;opacity: .85;font-size: 15px;font-weight: 200;}
+.hero2 {position:relative;min-height:65vh;display:grid;place-items:center;text-align:center;color:#fff;background: #355C8D;font-size: 15px;overflow: hidden;}
+.hero2::before {content:"";position:absolute;inset:0;background:url("../img/nosotroslimpio.png") center/cover no-repeat;z-index: 0;} /* Ajusta ruta sin ../ si CSS en raíz */
+.hero2 .content {position:relative;z-index:1;padding:80px 30px;} /* Espacio agregado */
+.hero2 h1 {font-size:clamp(36px,7vw,56px);margin:0 0 15px;font-weight: 800;}
+.hero2 p {max-width:780px;margin:0 auto 20px;opacity:.95}
+.hero2 .actions {display:flex;gap:14px;justify-content:center}
+.hero2 .tagline {max-width: 800px;margin: 0 auto 30px;opacity: .85;font-size: 15px;font-weight: 200;}
+
 
 /* -----------------------------HERO3 Contactos----------------------------- */
-.hero3{position:relative;min-height:70vh;display:grid;place-items:center;text-align:center;}
+.hero3{position:relative;min-height:65vh;display:grid;place-items:center;text-align:center;color:#fff;background: #355C8D;font-size: 15px;overflow: hidden;}
 .hero3::before{content:"";position:absolute;inset:0;background:url("../img/contactos.png") center/cover no-repeat;}
 .hero3.content{position:relative;z-index:1;padding:80px 0}
 .hero3 h1{font-size:clamp(36px,7vw,56px);margin:0 0 15px;font-weight: 800;}
@@ -170,7 +171,7 @@ transition: all 0.3s ease;  display: inline-flex;  align-items: center;  gap: 6p
 .hero3 .tagline {  max-width: 800px;margin: 0 auto 30px;opacity: .85;font-size: 15px;font-weight: 200;}
 
 /*--------------------------- HERO4  Personas Juridicas------------------------------- */
-.hero4{position:relative;min-height:60vh;display:grid;place-items:center;text-align:center;}
+.hero4{position:relative;min-height:65vh;display:grid;place-items:center;text-align:center;color:#fff;background: #355C8D;font-size: 15px;overflow: hidden;}
 .hero4::before{content:"";position:absolute;inset:0;background:url("../img/JURIDICA.png") center/cover no-repeat; }
 .hero4.content{position:relative;z-index:1;padding:80px 0}
 .hero4 h1{font-size:clamp(36px,7vw,56px);margin:0 0 15px;font-weight: 800;}
@@ -179,7 +180,7 @@ transition: all 0.3s ease;  display: inline-flex;  align-items: center;  gap: 6p
 .hero4 .tagline {  max-width: 800px;margin: 0 auto 30px;opacity: .85;font-size: 15px;font-weight: 200;}
 
 /* ------------------------------HERO5  Personas Naturales -----------------------------*/
-.hero5{position:relative;min-height:60vh;display:grid;place-items:center;text-align:center;}
+.hero5{position:relative;min-height:65vh;display:grid;place-items:center;text-align:center;color:#fff;background: #355C8D;font-size: 15px;overflow: hidden;}
 .hero5::before{content:"";position:absolute;inset:0;background:url("../img/PERSONAS NATURALES.png") center/cover no-repeat; }
 .hero5.content{position:relative;z-index:1;padding:80px 0}
 .hero5 h1{font-size:clamp(36px,7vw,56px);margin:0 0 15px;font-weight: 800;}
@@ -188,10 +189,10 @@ transition: all 0.3s ease;  display: inline-flex;  align-items: center;  gap: 6p
 .hero5 .tagline {  max-width: 800px;margin: 0 auto 30px;opacity: .85;font-size: 15px;font-weight: 200;}
 
 /* -------------------------HERO6  Unete------------------------------- */
-.hero6{position:relative;min-height:70vh;display:grid;place-items:center;text-align:center;}
-.hero6::before{content:"";position:absolute;inset:0;background:url("../img/UNETE.png") center/cover no-repeat;
+.hero6{position:relative;min-height:65vh;display:grid;place-items:center;text-align:center;color:#fff;background: #355C8D;font-size: 15px;overflow: hidden;}
+.hero6::before{content:"";position:absolute;inset:0;background:url("../img/unete..png") center/cover no-repeat;
 background-size: cover;background-position: center;background-repeat: no-repeat;width: 100%;height: 100%; }
-.hero6.content{position:relative;z-index:1;padding:80px 0}
+.hero6 .content{position:relative;z-index:1;padding:80px 0}
 .hero6 h1{font-size:clamp(36px,7vw,56px);margin:0 0 15px;font-weight: 800;}
 .hero6 p{max-width:780px;margin:0 auto px;opacity:.95}
 .hero6 .actions{display:flex;gap:14px;justify-content:center}
@@ -409,4 +410,23 @@ body:not(.loaded) {  overflow: hidden;}
 @media (max-width: 480px) {
   .card-content h3 {    font-size: 1.4rem;  }  
   .card-content p {    font-size: 1rem;  }
+}
+/* Scrollbar Personalizada */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-gradient);
+    border-radius: 10px;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #19213C 0%, #355C8D 100%);
 }
