@@ -27,7 +27,7 @@ define('ALLOWED_FILE_TYPES', ['pdf', 'doc', 'docx']);
 date_default_timezone_set('America/Guayaquil');  // Zona horaria de Ecuador
 
 // Modo de desarrollo (cambiar a false en producción)
-define('DEBUG_MODE', true);
+define('DEBUG_MODE', false);
 
 if (DEBUG_MODE) {
     error_reporting(E_ALL);
